@@ -43,6 +43,12 @@ class SessionController {
 
     const { id, name, avatar, provider } = user;
 
+    if (!avatar) {
+      avatar = {
+        url: 'https://i.pinimg.com/236x/91/aa/ef/91aaeffeaf6b29fe0a044568eea90be1.jpg'
+      }
+    }
+
     return res.json({
       user: {
         id,
